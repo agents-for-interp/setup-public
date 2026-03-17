@@ -36,6 +36,10 @@ if [ "$GIT_EMAIL" = "$SENTINEL" ] || [ -z "$GIT_EMAIL" ]; then
     unset_vars+=("GIT_EMAIL")
 fi
 
+if [ "$OPEN_ROUTER_DEV_KEY" = "$SENTINEL" ] || [ -z "$OPEN_ROUTER_DEV_KEY" ]; then
+    unset_vars+=("OPEN_ROUTER_DEV_KEY")
+fi
+
 if [ ${#unset_vars[@]} -gt 0 ]; then
     echo -e "${RED}WARNING: Skipping git config -- the following are unset: ${unset_vars[*]}${NC}"
 else
